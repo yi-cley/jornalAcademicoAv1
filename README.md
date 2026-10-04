@@ -23,5 +23,3 @@ Todas as páginas carregam os scripts nesta ordem:
 3. `js/auth.js`: cadastro, login, logout e sessão
 4. `js/layout.js`: cabeçalho, barra de abas, rodapé e o cartão de matéria
 5. o script da própria página (`index.js`, `regiao.js`, `cms.js`...)
-
-Para ver os dados: F12 > Application (ou Armazenamento) > Local Storage.
