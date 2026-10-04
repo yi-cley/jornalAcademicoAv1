@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar | Folha Acadêmica</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/icone-180.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="login">
+  <header id="topo"></header>
+
+  <main class="container" id="conteudo">
+    <section class="caixa-form">
+      <h1>Entrar</h1>
+      <p>Use o email e a senha da sua conta.</p>
+      <form id="form-login" class="formulario">
+        <p id="mensagem" class="mensagem" role="alert" hidden></p>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>Senha
+          <input type="password" name="senha" autocomplete="current-password" required>
+        </label>
+        <button type="submit" class="botao">Entrar</button>
+      </form>
+      <p class="dica">Ainda não tem conta? <a href="cadastro.html">Criar conta</a></p>
+      <p class="dica">Conta de editor para testes: admin@jornal.com / admin123</p>
+    </section>
+  </main>
+
+  <footer id="rodape" class="rodape"></footer>
+
+  <!-- A ordem importa: cada arquivo usa o que os anteriores criaram -->
+  <script src="js/util.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

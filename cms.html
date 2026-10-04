@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel | Folha Acadêmica</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/icone-180.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="cms">
+  <header id="topo"></header>
+
+  <main class="container" id="conteudo">
+    <header class="cabecalho-pagina">
+      <h1>Painel do jornal</h1>
+      <p>Crie, edite e publique matérias e abas. Tudo fica salvo neste navegador.</p>
+    </header>
+
+    <!-- MATÉRIAS -->
+    <section class="cms__bloco">
+      <div class="cms__colunas">
+        <form id="form-materia" class="formulario">
+          <h2 id="titulo-form-materia">Nova matéria</h2>
+          <input type="hidden" name="materiaId">
+          <label>Título
+            <input type="text" name="titulo" required maxlength="160">
+          </label>
+          <label>Aba
+            <select name="aba" required></select>
+          </label>
+          <label>Resumo
+            <textarea name="resumo" rows="2" required maxlength="300"></textarea>
+          </label>
+          <label>Texto
+            <textarea name="conteudo" rows="9" required></textarea>
+            <small>Deixe uma linha em branco entre os parágrafos.</small>
+          </label>
+          <label>Imagem: caminho em img/ ou endereço (opcional)
+            <input type="text" name="imagem" placeholder="img/arquivo.jpg ou https://">
+          </label>
+          <label class="check">
+            <input type="checkbox" name="publicada" checked> Publicar no site
+          </label>
+          <div class="acoes">
+            <button type="submit" class="botao">Salvar matéria</button>
+            <button type="button" class="botao botao--secundario" id="cancelar-materia" hidden>Cancelar edição</button>
+          </div>
+        </form>
+
+        <div>
+          <h2>Matérias</h2>
+          <div class="rolagem">
+            <table class="tabela">
+              <thead><tr><th>Título</th><th>Aba</th><th>Situação</th><th><span class="oculto">Ações</span></th></tr></thead>
+              <tbody id="lista-materias"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABAS -->
+    <section class="cms__bloco">
+      <div class="cms__colunas">
+        <form id="form-aba" class="formulario">
+          <h2 id="titulo-form-aba">Nova aba</h2>
+          <input type="hidden" name="abaSlug">
+          <label>Nome
+            <input type="text" name="nome" required maxlength="40">
+          </label>
+          <label>O que esta aba cobre
+            <textarea name="descricao" rows="3" required maxlength="200"></textarea>
+            <small>Aparece na página Região e no topo da aba.</small>
+          </label>
+          <label>Cor
+            <input type="color" name="cor" value="#0f5c73">
+          </label>
+          <div class="acoes">
+            <button type="submit" class="botao">Salvar aba</button>
+            <button type="button" class="botao botao--secundario" id="cancelar-aba" hidden>Cancelar edição</button>
+          </div>
+        </form>
+
+        <div>
+          <h2>Abas</h2>
+          <div class="rolagem">
+            <table class="tabela">
+              <thead><tr><th>Aba</th><th>Matérias</th><th><span class="oculto">Ações</span></th></tr></thead>
+              <tbody id="lista-abas"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USUÁRIOS -->
+    <section class="cms__bloco">
+      <h2>Usuários</h2>
+      <div class="rolagem">
+        <table class="tabela">
+          <thead><tr><th>Usuário</th><th>Papel</th><th><span class="oculto">Ações</span></th></tr></thead>
+          <tbody id="lista-usuarios"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cms__bloco">
+      <h2>Recomeçar</h2>
+      <p>Apaga todas as matérias, abas e contas e volta aos dados de exemplo.</p>
+      <button type="button" class="botao botao--perigo" id="botao-resetar">Apagar tudo e recomeçar</button>
+    </section>
+
+    <p id="aviso-cms" class="aviso-cms" role="status"></p>
+  </main>
+
+  <footer id="rodape" class="rodape"></footer>
+
+  <!-- A ordem importa: cada arquivo usa o que os anteriores criaram -->
+  <script src="js/util.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/cms.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar conta | Folha Acadêmica</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/icone-180.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="cadastro">
+  <header id="topo"></header>
+
+  <main class="container" id="conteudo">
+    <section class="caixa-form">
+      <h1>Criar conta</h1>
+      <p>Contas novas entram como leitor. Um editor pode liberar o acesso ao painel.</p>
+      <form id="form-cadastro" class="formulario">
+        <p id="mensagem" class="mensagem" role="alert" hidden></p>
+        <label>Nome
+          <input type="text" name="nome" autocomplete="name" required maxlength="60">
+        </label>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>Senha
+          <input type="password" name="senha" autocomplete="new-password" required minlength="6">
+          <small>Mínimo de 6 caracteres.</small>
+        </label>
+        <button type="submit" class="botao">Criar conta</button>
+      </form>
+      <p class="dica">Já tem conta? <a href="login.html">Entrar</a></p>
+    </section>
+  </main>
+
+  <footer id="rodape" class="rodape"></footer>
+
+  <!-- A ordem importa: cada arquivo usa o que os anteriores criaram -->
+  <script src="js/util.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>
