@@ -297,7 +297,7 @@ Guia rápido: como abrir o projeto, lista de páginas, conta de teste, ordem dos
 | Rotas | parâmetros de URL lidos por `param()` | `urls.py`, `routes/web.php`, React Router |
 | Controlador / view | `index.js`, `regiao.js`, `cms.js`... | `views.py`, Controllers |
 | Template | HTML + template strings | templates Django, Blade, JSX |
-| Layout base | `montarLayout()` | `base.html` com `{% extends %}`, layouts do Laravel |
+| Layout base | `montarLayout()` | `` `base.html` com `{% extends %}`, layouts do Laravel `` |
 | Componente | `cartaoMateria()` | componentes React/Vue, `{% include %}` |
 | Guarda de rota | `Auth.exigirEditor()` | `@login_required`, middleware |
 | Sessão | chave `jornal_sessao` | sessões do servidor com cookie |
