@@ -160,7 +160,7 @@ A função é chamada automaticamente no fim do arquivo, mas também pode ser ch
 
 Quando a matéria não tem imagem, o cartão mostra um bloco na cor da aba com a inicial do nome, para a capa não ficar com buracos.
 
-**Pontos principais.** `cartaoMateria()` é a mesma ideia de um componente React (`<CartaoMateria materia={m} tipo="destaque" />`) ou de um `{% include %}` no Django: escrever uma vez, usar em vários lugares. A capa e a região usam a mesma função, então uma mudança no cartão aparece nas duas páginas.
+**Pontos principais.** `cartaoMateria()` é a mesma ideia de um componente React (`<CartaoMateria materia={m} tipo="destaque" />`) ou de um `include` no Django: escrever uma vez, usar em vários lugares. A capa e a região usam a mesma função, então uma mudança no cartão aparece nas duas páginas.
 
 ### 4.5 Controladores de página
 
@@ -297,8 +297,8 @@ Guia rápido: como abrir o projeto, lista de páginas, conta de teste, ordem dos
 | Rotas | parâmetros de URL lidos por `param()` | `urls.py`, `routes/web.php`, React Router |
 | Controlador / view | `index.js`, `regiao.js`, `cms.js`... | `views.py`, Controllers |
 | Template | HTML + template strings | templates Django, Blade, JSX |
-| Layout base | `montarLayout()` | `` `base.html` com `{% extends %}`, layouts do Laravel `` |
-| Componente | `cartaoMateria()` | componentes React/Vue, `{% include %}` |
+| Layout base | `montarLayout()` | `` `base.html` com `extends`, layouts do Laravel `` |
+| Componente | `cartaoMateria()` | componentes React/Vue, `include` |
 | Guarda de rota | `Auth.exigirEditor()` | `@login_required`, middleware |
 | Sessão | chave `jornal_sessao` | sessões do servidor com cookie |
 | Escape automático | `esc()` chamado à mão | automático nos templates |
